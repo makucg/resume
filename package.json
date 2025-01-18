@@ -6,22 +6,102 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "check-types": "tsc --noEmit --pretty",
+    "commit": "cz",
+    "prepare": "husky",
+    "analyze": "cross-env ANALYZE=true next build"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.2.0",
+    "@hookform/resolvers": "^3.10.0",
+    "@iconify/react": "^5.2.0",
+    "@react-aria/ssr": "3.9.7",
+    "@react-aria/visually-hidden": "3.8.19",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
+    "body-scroll-lock": "4.0.0-beta.0",
+    "clsx": "2.1.1",
+    "framer-motion": "11.18.1",
+    "image-size": "^1.2.0",
+    "next": "15.1.5",
+    "next-themes": "^0.4.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.1.4"
+    "react-hook-form": "^7.54.2",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "eslint": "^9",
-    "eslint-config-next": "15.1.4",
-    "@eslint/eslintrc": "^3"
+    "@antfu/eslint-config": "^3.14.0",
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@commitlint/cz-commitlint": "^19.6.1",
+    "@commitlint/types": "^19.5.0",
+    "@eslint-react/eslint-plugin": "^1.23.2",
+    "@next/bundle-analyzer": "^15.1.5",
+    "@next/eslint-plugin-next": "15.1.5",
+    "@react-types/shared": "3.27.0",
+    "@types/leaflet": "^1.9.16",
+    "@types/node": "22.10.7",
+    "@types/react": "19.0.7",
+    "@types/react-dom": "19.0.3",
+    "@typescript-eslint/eslint-plugin": "8.20.0",
+    "@typescript-eslint/parser": "8.20.0",
+    "autoprefixer": "10.4.20",
+    "commitizen": "^4.3.1",
+    "cross-env": "^7.0.3",
+    "cssnano": "^7.0.6",
+    "esbuild": "^0.24.2",
+    "eslint": "^9.18.0",
+    "eslint-config-next": "15.1.5",
+    "eslint-config-prettier": "10.0.1",
+    "eslint-plugin-format": "^1.0.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "5.2.2",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.18",
+    "eslint-plugin-tailwindcss": "^3.18.0",
+    "eslint-plugin-unused-imports": "4.1.4",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.1",
+    "postcss": "8.5.1",
+    "prettier": "3.4.2",
+    "semantic-release": "^24.2.1",
+    "tailwind-variants": "0.3.0",
+    "tailwindcss": "3.4.17",
+    "typescript": "5.7.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "conventionalcommits"
+        }
+      ],
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ],
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
   }
 }

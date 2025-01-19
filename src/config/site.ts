@@ -4,7 +4,7 @@ import ProfileCard from '@/components/sections/Profile';
 import ProjectsSection from '@/components/sections/Projects';
 import SkillsSection from '@/components/sections/Skills';
 import StudiesSection from '@/components/sections/Studies';
-import { FaBookOpen, FaCode, FaHouse, FaImagePortrait, FaLaptopCode } from 'react-icons/fa6';
+import { FaBookOpen, FaCode, FaDev, FaHouse, FaImagePortrait, FaLaptopCode } from 'react-icons/fa6';
 
 export const siteConfig = {
   title: 'Resume',
@@ -56,13 +56,13 @@ export const siteConfig = {
       id: 'projects',
       title: 'Projects',
       subtitle: 'My projects',
-      icon: FaLaptopCode,
+      icon: FaDev,
       section: ProjectsSection,
     },
   },
   experiences: [
     {
-      title: 'Analyst Programmer',
+      title: 'Analyst Developer',
       company: 'Indra',
       period: '2022 - Present',
       description: 'Project management for external vendors at Inditex:',
@@ -85,12 +85,15 @@ export const siteConfig = {
       duration: '11 months',
     },
     {
-      title: 'Analyst Programmer',
+      title: 'Analyst Developer',
       company: 'Indra',
       period: '2018 - Feb 2022',
-      description: 'Development of Puntal project for government management:',
+      description: 'Project management for external vendors at Inditex:',
       details: [
-        'Technologies: Java, Hibernate, Spring, Swing, Oracle, JSF, JasperReports.',
+        'Technical analysis, bug fixes, and code validation.',
+        'Integration with other teams.',
+        'Training of new team members.',
+        'Technologies: Java, Spring, Hibernate, SOAP, SWT, JavaScript, DB2.',
       ],
       duration: '4 years',
     },

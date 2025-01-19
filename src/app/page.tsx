@@ -17,7 +17,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     const updateScreenSizes = () => {
       setIsMobile(window.innerWidth <= 640);
-      setIsTablet(window.innerWidth > 640 && window.innerWidth <= 768);
+      setIsTablet(window.innerWidth > 640 && window.innerWidth <= 1280);
     };
 
     updateScreenSizes(); // Run on mount

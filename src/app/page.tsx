@@ -1,66 +1,50 @@
+'use client';
+
 import Navbar from '@/components/Navbar';
+import { PanelWrapper } from '@/components/PanelWrapper';
 import ScrollIndicator from '@/components/ScrollIndicator';
-import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
-type Props = {
-  children: React.ReactNode;
-};
+const Home: React.FC = () => {
+  const [activeSection, setActiveSection] = useState<string | null>('home');
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
-const Home: React.FC<Props> = ({ children }) => {
+  const handleSectionClick = (id: string) => {
+    setActiveSection(prev => (prev === id ? null : id));
+  };
+
+  useEffect(() => {
+    const updateScreenSizes = () => {
+      setIsMobile(window.innerWidth <= 640);
+      setIsTablet(window.innerWidth > 640 && window.innerWidth <= 768);
+    };
+
+    updateScreenSizes(); // Run on mount
+    window.addEventListener('resize', updateScreenSizes);
+
+    return () => window.removeEventListener('resize', updateScreenSizes); // Clean up listener
+  }, []);
+
   return (
-    <div className="grid min-h-screen grid-rows-[20px_1fr_20px] place-items-center gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20">
-      <div className="grid min-h-screen grid-rows-[auto_1fr_auto]">
-        <Navbar />
-        <main className="relative overflow-y-scroll">{children}</main>
-        <ScrollIndicator />
+    <div className="relative h-screen w-screen overflow-hidden">
+      {/* Navbar para escritorio */}
+      <Navbar activeSection={activeSection} onNavigate={handleSectionClick} />
+
+      {/* ScrollIndicator para móvil */}
+      <ScrollIndicator activeSection={activeSection} onNavigate={handleSectionClick} />
+
+      {/* Secciones */}
+      <div
+        className="relative overflow-auto 2xl:overflow-hidden"
+        style={{
+          width: '100%',
+          height: `calc(100% - ${!isMobile ? '0px' : '70px'})`, // Adjust height for ScrollIndicator
+          paddingRight: !isTablet ? '0' : '64px', // Adjust width for Navbar
+        }}
+      >
+        <PanelWrapper activeSection={activeSection} />
       </div>
-      <footer className="row-start-3 flex flex-wrap items-center justify-center gap-6">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 };

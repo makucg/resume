@@ -107,7 +107,7 @@ export const ExperienceIcon: React.FC<IconSvgProps> = ({
   );
 };
 
-export const StudentsIcon: React.FC<IconSvgProps> = ({
+export const StudiesIcon: React.FC<IconSvgProps> = ({
   size = 24,
   width,
   height,

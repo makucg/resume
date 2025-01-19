@@ -16,3 +16,17 @@ body {
   /*font-family: 'Roboto', sans-serif; */
   background-image: url('/assets/img/background.jpg');
 }
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .custom-scroll {
+    overflow: auto !important;
+    height: calc(100vh - 56px) !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .custom-scroll {
+    overflow: auto;
+    padding-right: 60px;
+  }
+}

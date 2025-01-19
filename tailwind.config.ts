@@ -13,6 +13,9 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      transitionProperty: {
+        opacity: 'opacity',
+      },
       lineHeight: {
         11: '2.75rem',
         12: '3rem',
@@ -20,7 +23,8 @@ export default {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['var(--font-space-grotesk)', ...fontFamily.sans],
+        sans: ['var(--font-fira-code)', ...fontFamily.sans],
+        mono: ['var(--font-fira-code)', 'var(--font-roboto-mono)', ...fontFamily.mono],
       },
       colors: {
         primary: colors.pink,
@@ -30,6 +34,10 @@ export default {
         60: '60',
         70: '70',
         80: '80',
+      },
+      spacing: {
+        17.5: '70px',
+        15: '60px',
       },
       typography: ({ theme }: { theme: any }) => ({
         DEFAULT: {

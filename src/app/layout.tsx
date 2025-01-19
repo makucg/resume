@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Fira_Code, Roboto_Mono } from 'next/font/google';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const firaCode = Fira_Code({
+  variable: '--font-fira-code',
   subsets: ['latin'],
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const robotoMono = Roboto_Mono({
+  variable: '--font-roboto-mono',
   subsets: ['latin'],
 });
 
@@ -25,10 +25,9 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} scroll-smooth antialiased`}
+        className={`${firaCode.variable} ${robotoMono.variable} scroll-smooth antialiased`}
       >
         {children}
-
       </body>
     </html>
   );

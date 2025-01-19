@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diego Montes Novio - CV</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Niramit:300,300i,700" rel="stylesheet">
+    <style>
+        /* General styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #121212;
+            color: #ffffff;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            height: 100vh;
+            position: relative;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .background svg {
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            animation: rotate 30s linear infinite;
+            opacity: 0.1;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .background .code-lines {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            animation: move 10s linear infinite;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .code-lines span {
+            color: rgba(255, 255, 255, 0.3);
+            font-family: monospace;
+            font-size: 1.2rem;
+            line-height: 1.8rem;
+            margin: 5px 0;
+        }
+
+        .section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 1s ease-in-out;
+            position: absolute;
+            width: 100%;
+            top: 0;
+        }
+
+        .active {
+            transform: translateY(0);
+        }
+
+        .hidden {
+            transform: translateY(100%);
+        }
+
+        .scroll-button {
+            font-size: 2rem;
+            color: #00d4ff;
+            cursor: pointer;
+            animation: pulse 1.5s infinite;
+            margin-top: 20px;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .card {
+            background: rgba(30, 30, 47, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            max-width: 700px;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        ul li {
+            background: #00d4ff;
+            color: #121212;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+		.timeline {
+            position: relative;
+            padding-left: 4rem;
+            margin: 0 0 0 30px;
+            color: white;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: #27293d;
+        }
+
+        .timeline-container {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-icon {
+            position: absolute;
+            left: -88px;
+            top: 4px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2rem;
+            background: #4f537b;
+        }
+
+        .timeline-icon i {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .timeline-body {
+            background: #27293d;
+            border-radius: 3px;
+            padding: 20px 20px 15px;
+            box-shadow: 1px 3px 9px rgba(0, 0, 0, .1);
+            position: relative;
+        }
+
+        .timeline-body:before {
+            content: '';
+            background: inherit;
+            width: 20px;
+            height: 20px;
+            display: block;
+            position: absolute;
+            left: -10px;
+            transform: rotate(45deg);
+            border-radius: 0 0 0 2px;
+        }
+
+        .timeline-title {
+            margin-bottom: 1.4rem;
+        }
+
+        .badge {
+            background: #4f537b;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .timeline-subtitle {
+            font-weight: 300;
+            font-style: italic;
+            opacity: .4;
+            margin-top: 16px;
+            font-size: 11px;
+        }
+
+        .primary .badge, .primary .timeline-icon {
+            background: #1d8cf8 !important;
+        }
+
+        .info .badge, .info .timeline-icon {
+            background: #11cdef !important;
+        }
+
+        .success .badge, .success .timeline-icon {
+            background: #00bf9a !important;
+        }
+
+        .warning .badge, .warning .timeline-icon {
+            background: #ff8d72 !important;
+        }
+
+        .danger .badge, .danger .timeline-icon {
+            background: #fd5d93 !important;
+        }
+		
+		/* Navigation icons */
+        .nav-icons {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .nav-icons .icon {
+            font-size: 1.5rem;
+            color: #666;
+            cursor: pointer;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .nav-icons .icon.active {
+            color: #00d4ff;
+            transform: scale(1.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+            <circle cx="400" cy="400" r="300" fill="none" stroke="#00d4ff" stroke-width="2" />
+            <circle cx="400" cy="400" r="200" fill="none" stroke="#ff00b3" stroke-width="2" />
+            <circle cx="400" cy="400" r="100" fill="none" stroke="#00ff88" stroke-width="2" />
+        </svg>
+        <div class="code-lines">
+            <span>&lt;div&gt;Hello World!&lt;/div&gt;</span>
+            <span>&lt;h1&gt;Welcome to my CV&lt;/h1&gt;</span>
+            <span>&lt;ul&gt;&lt;li&gt;HTML&lt;/li&gt;&lt;li&gt;CSS&lt;/li&gt;&lt;li&gt;JavaScript&lt;/li&gt;&lt;/ul&gt;</span>
+            <span>&lt;!-- Keep learning, keep growing --&gt;</span>
+        </div>
+    </div>
+	
+	<!-- Navigation Icons -->
+    <div class="nav-icons">
+        <i class="icon fas fa-home active" data-section="0"></i>
+        <i class="icon fas fa-user" data-section="1"></i>
+        <i class="icon fas fa-graduation-cap" data-section="2"></i>
+        <i class="icon fas fa-briefcase" data-section="3"></i>
+        <i class="icon fas fa-project-diagram" data-section="4"></i>
+    </div>
+
+    <div id="section-0" class="section active">
+        <h1>Diego Montes Novio</h1>
+        <p>Full-stack Developer | Passionate about coding and solving complex problems.</p>
+        <div class="scroll-button" onclick="nextSection(1)">&darr;</div>
+    </div>
+
+    <div id="section-1" class="section hidden">
+      <div class="scroll-button" onclick="previousSection()">&uarr;</div>
+        <div class="card">
+            <h2>Personal Details</h2>
+            <p>Name: Diego Montes Novio</p>
+            <p>Email: diego.montes@outlook.com</p>
+            <p>Phone: +34 628006743</p>
+            <p>Languages: Spanish (Native), Galician (Native), English (Intermediate), French (Basic)</p>
+            <p>Driver's License: Yes</p>
+            <p>Willingness to Travel: Yes</p>
+        </div>
+        <div class="scroll-button" onclick="nextSection(2)">&darr;</div>
+    </div>
+
+    <div id="section-2" class="section hidden">
+      <div class="scroll-button" onclick="previousSection()">&uarr;</div>
+        <div class="card">
+            <h2>Education</h2>
+            <ul>
+                <li>System Administration | IES Xulián Magariños (2007 - 2009)</li>
+                <li>1Z0-851 Java Standard Edition 6 Programmer Certified (2010)</li>
+            </ul>
+        </div>
+        <div class="scroll-button" onclick="nextSection(3)">&darr;</div>
+    </div>
+
+    <div id="section-3" class="section hidden">
+      <div class="scroll-button" onclick="previousSection()">&uarr;</div>
+        <div class="card">
+            <h2>Experience</h2>
+        <div class="timeline">
+	<div class="timeline-container primary">
+		<div class="timeline-icon">
+			<i class="fas fa-code"></i>
+		</div>
+		<div class="timeline-body">
+			<h4 class="timeline-title"><span class="badge">Analyst Programmer | Indra (2022 - Present)</span></h4>
+			<p>Project management for external vendors at Inditex:</p>
+			<ul>
+				<li>Technical analysis, bug fixes, and code validation.</li>
+				<li>Integration with other teams.</li>
+				<li>Technologies: Java, Spring, Hibernate, SOAP, SWT, JavaScript, DB2.</li>
+			</ul>
+			<p class="timeline-subtitle">2 years</p>
+		</div>
+	</div>
+	<div class="timeline-container danger">
+		<div class="timeline-icon">
+			<i class="fas fa-code"></i>
+		</div>
+		<div class="timeline-body">
+			<h4 class="timeline-title"><span class="badge">Developer | Cuatroochenta (2022)</span></h4>
+			<p>Microservices using Java 11 and Spring Boot:</p>
+			<ul>
+				<li>RESTful APIs and architectural design contributions.</li>
+				<li>Technologies: JavaScript, JQuery, Thymeleaf.</li>
+			</ul>
+			<p class="timeline-subtitle">11 months</p>
+		</div>
+	</div>
+	<div class="timeline-container success">
+		<div class="timeline-icon">
+			<i class="fas fa-code"></i>
+		</div>
+		<div class="timeline-body">
+			<h4 class="timeline-title"><span class="badge">Analyst Programmer | Indra (2018 - Feb 2022)</span></h4>
+			<p>Development of Puntal project for government management:</p>
+			<ul>
+				<li>Technologies: Java, Hibernate, Spring, Swing, Oracle, JSF, JasperReports.</li>
+			</ul>
+			<p class="timeline-subtitle">4 years</p>
+		</div>
+	</div>
+	<div class="timeline-container warning">
+		<div class="timeline-icon">
+			<i class="fas fa-code"></i>
+		</div>
+		<div class="timeline-body">
+			<h4 class="timeline-title"><span class="badge">Developer | Coremain (2009 - 2015)</span></h4>
+			<p>Development of Puntal project for government management:</p>
+			<ul>
+				<li>Technologies: Java, Hibernate, Spring, Swing, Oracle, JSF, JasperReports.</li>
+			</ul>
+			<p class="timeline-subtitle">6 years</p>
+		</div>
+	</div>
+</div>
+        </div>
+        <div class="scroll-button" onclick="nextSection(4)">&darr;</div>
+    </div>
+
+    <div id="section-4" class="section hidden">
+      <div class="scroll-button" onclick="previousSection()">&uarr;</div>
+        <div class="card">
+            <h2>Projects</h2>
+            <ul>
+                <li>Expense Tracker Application</li>
+                <li>Portfolio Website</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let currentSection = 0;
+        let isScrolling = false;
+
+        function nextSection(next) {
+            const sections = document.querySelectorAll('.section');
+            if (next < sections.length && !isScrolling) {
+                isScrolling = true;
+				updateIcons(next);				  
+                sections[currentSection].classList.remove('active');
+                sections[currentSection].classList.add('hidden');
+                sections[next].classList.remove('hidden');
+                sections[next].classList.add('active');
+                currentSection = next;
+                setTimeout(() => (isScrolling = false), 1000);
+            }
+        }
+
+        function previousSection() {
+            const sections = document.querySelectorAll('.section');
+            if (currentSection > 0 && !isScrolling) {
+                isScrolling = true;
+				updateIcons(currentSection - 1);								
+                sections[currentSection].classList.remove('active');
+                sections[currentSection].classList.add('hidden');
+                sections[currentSection - 1].classList.remove('hidden');
+                sections[currentSection - 1].classList.add('active');
+                currentSection -= 1;
+                setTimeout(() => (isScrolling = false), 1000);
+            }
+        }
+		
+		function navigateToSection(target) {
+            if (target !== currentSection && !isScrolling) {
+                const sections = document.querySelectorAll('.section');
+                isScrolling = true;
+                updateIcons(target);
+                sections[currentSection].classList.remove('active');
+                sections[currentSection].classList.add('hidden');
+                sections[target].classList.remove('hidden');
+                sections[target].classList.add('active');
+                currentSection = target;
+                setTimeout(() => (isScrolling = false), 1000);
+            }
+        }
+
+        function updateIcons(activeIndex) {
+            const icons = document.querySelectorAll('.nav-icons .icon');
+            icons.forEach((icon, index) => {
+                icon.classList.toggle('active', index === activeIndex);
+            });
+        }
+
+        // Attach event listeners to icons
+        document.querySelectorAll('.nav-icons .icon').forEach(icon => {
+            icon.addEventListener('click', () => {
+                const targetSection = parseInt(icon.getAttribute('data-section'));
+                navigateToSection(targetSection);
+            });
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowDown') {
+                nextSection(currentSection + 1);
+            } else if (event.key === 'ArrowUp') {
+                previousSection();
+            }
+        });
+
+        document.addEventListener('wheel', (event) => {
+            if (event.deltaY > 0) {
+                nextSection(currentSection + 1);
+            } else if (event.deltaY < 0) {
+                previousSection();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -7,6 +7,7 @@ const ExperienceSection: React.FC = () => {
       <div className="container relative mx-auto flex max-w-4xl place-items-center justify-center rounded-lg bg-white px-6 py-12 opacity-75 shadow-2xl md:px-20 md:py-16">
         <div className="space-y-6 border-l-2 border-dashed">
           {siteConfig.experiences.map((experience, index) => (
+            // eslint-disable-next-line react/no-array-index-key
             <div key={index} className="relative w-full">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="absolute -top-0.5 z-10 -ml-3.5 size-7 rounded-full text-blue-500">
                 <path
@@ -22,6 +23,7 @@ const ExperienceSection: React.FC = () => {
                 </p>
                 <ul className="mt-2 max-w-screen-sm list-inside list-disc text-sm text-gray-500">
                   {experience.details.map((detail, idx) => (
+                    // eslint-disable-next-line react/no-array-index-key
                     <li key={idx}>{detail}</li>
                   ))}
                 </ul>

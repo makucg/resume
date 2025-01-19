@@ -1,16 +1,6 @@
 import type { Metadata } from 'next';
-import { Fira_Code, Roboto_Mono } from 'next/font/google';
+import { fontMono, fontSans, robotoMono } from '@/config/fonts';
 import './globals.css';
-
-const firaCode = Fira_Code({
-  variable: '--font-fira-code',
-  subsets: ['latin'],
-});
-
-const robotoMono = Roboto_Mono({
-  variable: '--font-roboto-mono',
-  subsets: ['latin'],
-});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -25,7 +15,7 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <body
-        className={`${firaCode.variable} ${robotoMono.variable} scroll-smooth antialiased`}
+        className={`${fontMono.className} ${fontSans.variable} ${robotoMono.variable} scroll-smooth antialiased`}
       >
         {children}
       </body>

@@ -2,7 +2,6 @@ import type { Config } from 'tailwindcss';
 import formsPlugin from '@tailwindcss/forms';
 import typographyPlugin from '@tailwindcss/typography';
 import colors from 'tailwindcss/colors';
-import { fontFamily } from 'tailwindcss/defaultTheme';
 
 export default {
   content: [
@@ -23,8 +22,8 @@ export default {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['var(--font-fira-code)', ...fontFamily.sans],
-        mono: ['var(--font-fira-code)', 'var(--font-roboto-mono)', ...fontFamily.mono],
+        sans: ['var(--font-sans)', 'Inter', 'sans-serif'],
+        mono: ['var(--font-mono)', 'Fira Code', 'monospace'],
       },
       colors: {
         primary: colors.pink,

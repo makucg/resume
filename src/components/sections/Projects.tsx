@@ -12,7 +12,7 @@ const ProjectsSection: React.FC = () => {
         <div className="flex flex-col space-y-8">
           {siteConfig.projects.map((project, index) => (
             <div
-              key={index}
+              key={project.title}
               className={`relative flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}
             >
               <span className={`${index % 2 === 0 ? 'left-0 top-0 ml-1 mt-1' : 'bottom-0 right-0 mb-1 mr-1'}

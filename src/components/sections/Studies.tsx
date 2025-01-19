@@ -7,8 +7,8 @@ const StudiesSection: React.FC = () => {
         <div className="rounded-md bg-black/50 p-4 ">
           <h1 className="pb-4 text-center text-4xl font-bold text-white">Education</h1>
           <div className="space-y-4">
-            {siteConfig.education.map((study, index) => (
-              <div key={index} className="relative w-full">
+            {siteConfig.education.map((study, _index) => (
+              <div key={study.title} className="relative w-full">
                 <div className="ml-6">
                   <h4 className="font-bold text-white">{study.title}</h4>
                   <div className="mt-2 flex items-center space-x-1 text-sm">

@@ -72,7 +72,6 @@ export const siteConfig = {
         'Technologies: Java, Spring, Hibernate, SOAP, SWT, JavaScript, DB2.',
       ],
       duration: '2 years',
-      theme: 'primary',
     },
     {
       title: 'Developer',
@@ -84,7 +83,6 @@ export const siteConfig = {
         'Technologies: JavaScript, JQuery, Thymeleaf.',
       ],
       duration: '11 months',
-      theme: 'danger',
     },
     {
       title: 'Analyst Programmer',
@@ -95,7 +93,6 @@ export const siteConfig = {
         'Technologies: Java, Hibernate, Spring, Swing, Oracle, JSF, JasperReports.',
       ],
       duration: '4 years',
-      theme: 'success',
     },
     {
       title: 'Developer',
@@ -106,7 +103,6 @@ export const siteConfig = {
         'Technologies: Java, Hibernate, Spring, Swing, Oracle, JSF, JasperReports.',
       ],
       duration: '6 years',
-      theme: 'warning',
     },
   ],
   education: [

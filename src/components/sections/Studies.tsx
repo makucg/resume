@@ -14,7 +14,7 @@ const StudiesSection: React.FC = () => {
                   <div className="mt-2 flex items-center space-x-1 text-sm">
                     <span className="text-gray-500">{study.school}</span>
                     <span className="text-gray-500">|</span>
-                    <span className="font-semibold text-blue-500">{study.period}</span>
+                    <span className="font-semibold text-green-700">{study.period}</span>
                   </div>
                 </div>
               </div>

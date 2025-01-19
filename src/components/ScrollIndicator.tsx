@@ -15,8 +15,8 @@ const ScrollIndicator: React.FC<{
             key={sectionKey}
             title={title}
             onClick={() => onNavigate(sectionKey)}
-            className={`rounded px-4 py-2 ${
-              activeSection === sectionKey ? 'bg-blue-500' : 'bg-gray-600'
+            className={`rounded px-4 py-2 opacity-50 ${
+              activeSection === sectionKey ? 'bg-green-700' : 'bg-gray-600'
             }`}
           >
             <Icon size={24} />

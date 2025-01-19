@@ -16,8 +16,8 @@ const Navbar: React.FC<{
             key={sectionKey}
             title={title}
             onClick={() => onNavigate(sectionKey)}
-            className={`flex size-12 items-center justify-center rounded-full ${
-              activeSection === sectionKey ? 'bg-blue-500 text-white' : 'bg-gray-200'
+            className={`flex size-12 items-center justify-center rounded-full opacity-50 ${
+              activeSection === sectionKey ? 'bg-green-700 text-white' : 'bg-gray-200'
             }`}
           >
             <Icon size={24} />

@@ -1,13 +1,13 @@
-import { ExperienceIcon, HomeIcon, ProfileIcon, ProjectsIcon, SkillsIcon, StudiesIcon } from '@/components/icons/icons';
 import ExperienceSection from '@/components/sections/Experience';
 import HomeSection from '@/components/sections/Home';
 import ProfileCard from '@/components/sections/Profile';
 import ProjectsSection from '@/components/sections/Projects';
 import SkillsSection from '@/components/sections/Skills';
 import StudiesSection from '@/components/sections/Studies';
+import { FaBookOpen, FaCode, FaHouse, FaImagePortrait, FaLaptopCode } from 'react-icons/fa6';
 
 export const siteConfig = {
-  name: 'Resume',
+  title: 'Resume',
   description: 'Diego Montes Novio - Resume',
   author: 'Diego Montes Novio',
   email: 'diego.montes@outlook.com',
@@ -21,42 +21,42 @@ export const siteConfig = {
       id: 'home',
       title: 'Home',
       subtitle: 'Full Stack Developer',
-      icon: HomeIcon,
+      icon: FaHouse,
       section: HomeSection,
     },
     profile: {
       id: 'profile',
       title: 'Profile',
       subtitle: 'About me',
-      icon: ProfileIcon,
+      icon: FaImagePortrait,
       section: ProfileCard,
     },
     experience: {
       id: 'experience',
       title: 'Experience',
       subtitle: 'My work experience',
-      icon: ExperienceIcon,
+      icon: FaLaptopCode,
       section: ExperienceSection,
     },
     studies: {
       id: 'studies',
       title: 'Studies',
       subtitle: 'My studies',
-      icon: StudiesIcon,
+      icon: FaBookOpen,
       section: StudiesSection,
     },
     skills: {
       id: 'skills',
       title: 'Skills',
       subtitle: 'My skills',
-      icon: SkillsIcon,
+      icon: FaCode,
       section: SkillsSection,
     },
     projects: {
       id: 'projects',
       title: 'Projects',
       subtitle: 'My projects',
-      icon: ProjectsIcon,
+      icon: FaLaptopCode,
       section: ProjectsSection,
     },
   },

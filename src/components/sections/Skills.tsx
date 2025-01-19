@@ -9,7 +9,7 @@ const SkillsSection: React.FC = () => {
             <span>95%</span>
           </div>
           <div className="w-full rounded-full bg-gray-300">
-            <div className="h-2 w-[95%] rounded-full bg-rose-500"></div>
+            <div className="h-2 w-[95%] rounded-full bg-green-700"></div>
           </div>
         </div>
 
@@ -19,7 +19,7 @@ const SkillsSection: React.FC = () => {
             <span>80%</span>
           </div>
           <div className="w-full rounded-full bg-gray-300">
-            <div className="h-2 w-4/5 rounded-full bg-rose-500"></div>
+            <div className="h-2 w-4/5 rounded-full bg-green-700"></div>
           </div>
         </div>
 
@@ -29,7 +29,7 @@ const SkillsSection: React.FC = () => {
             <span>60%</span>
           </div>
           <div className="w-full rounded-full bg-gray-300">
-            <div className="h-2 w-3/5 rounded-full bg-rose-500"></div>
+            <div className="h-2 w-3/5 rounded-full bg-green-700"></div>
           </div>
         </div>
 
@@ -39,7 +39,7 @@ const SkillsSection: React.FC = () => {
             <span>50%</span>
           </div>
           <div className="w-full rounded-full bg-gray-300">
-            <div className="h-2 w-2/4 rounded-full bg-rose-500"></div>
+            <div className="h-2 w-2/4 rounded-full bg-green-700"></div>
           </div>
         </div>
 
@@ -49,7 +49,7 @@ const SkillsSection: React.FC = () => {
             <span>40%</span>
           </div>
           <div className="w-full rounded-full bg-gray-300">
-            <div className="h-2 w-2/5 rounded-full bg-rose-500"></div>
+            <div className="h-2 w-2/5 rounded-full bg-green-700"></div>
           </div>
         </div>
 
@@ -59,7 +59,7 @@ const SkillsSection: React.FC = () => {
             <span>20%</span>
           </div>
           <div className="w-full rounded-full bg-gray-300">
-            <div className="h-2 w-1/5 rounded-full bg-rose-500"></div>
+            <div className="h-2 w-1/5 rounded-full bg-green-700"></div>
           </div>
         </div>
       </div>

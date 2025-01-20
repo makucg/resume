@@ -26,6 +26,7 @@ const ProfileCard: React.FC = () => {
               Santiago de Compostela
             </p>
             <p className="pt-8 text-sm">Java backend developer trying to understand the world...</p>
+            <p className="pt-2 text-sm">I am a software developer with over 10 years of experience in the IT sector, primarily focused on backend development with some frontend exposure. Passionate about technology, I thrive in collaborative environments, enjoy learning, and embrace new challenges to continuously improve my skills and knowledge.</p>
 
             <div className="pb-8 pt-12">
               <button className="rounded-full bg-green-700 px-4 py-2 font-bold text-white hover:bg-green-900" type="button">

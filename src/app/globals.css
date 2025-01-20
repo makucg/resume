@@ -13,20 +13,12 @@ input:-webkit-autofill:focus {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /*font-family: 'Roboto', sans-serif; */
   background-image: url('/assets/img/background.jpg');
 }
 
-@media (min-width: 640px) and (max-width: 767px) {
-  .custom-scroll {
-    overflow: auto !important;
-    height: calc(100vh - 56px) !important;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .custom-scroll {
-    overflow: auto;
-    padding-right: 60px;
-  }
+.bg-text {
+  background: linear-gradient(95deg, #059dff 15%, #6549d5 45%, #e33fa1 75%, #fb5343 100%) 95%/200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

@@ -8,7 +8,7 @@ import { FaBookOpen, FaCode, FaDev, FaHouse, FaImagePortrait, FaLaptopCode } fro
 
 export const siteConfig = {
   title: 'Resume',
-  description: 'Diego Montes Novio - Resume',
+  description: 'Diego Montes Novio - Developer',
   author: 'Diego Montes Novio',
   email: 'diego.montes@outlook.com',
   url: 'https://dmndev-resume.vercel.app',
@@ -105,6 +105,11 @@ export const siteConfig = {
       period: '2009 - 2015',
       description: 'Development of Puntal project for government management:',
       details: [
+        'Technical analysis, bug fixes, and code validation.',
+        'Integration with other teams.',
+        'Training of new team members.',
+        'Training of clients.',
+        'Deployment of new versions.',
         'Technologies: Java, Hibernate, Spring, Swing, Oracle, JSF, JasperReports.',
       ],
       duration: '6 years',

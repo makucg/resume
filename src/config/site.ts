@@ -11,6 +11,8 @@ export const siteConfig = {
   description: 'Diego Montes Novio - Resume',
   author: 'Diego Montes Novio',
   email: 'diego.montes@outlook.com',
+  url: 'https://dmndev-resume.vercel.app',
+  keywords: 'Diego Montes Novio, Diego Montes, Diego, Montes, Novio, dmndev, dmndev resume, devmon, devmon resume, developer, CV, Backend Developer, Full Stack Developer, Java Developer, Spring Developer, Hibernate Developer, JavaScript Developer, React Developer, Next.js Developer, Node.js Developer, Python Developer, Swift Developer, WatchOS Developer, iOS Developer, Android Developer, Flutter Developer, Mobile Developer, Web Developer, Frontend Developer, Backend Developer, Software Developer, Software Engineer, Analyst Developer, GasoAhorro',
   links: {
     github: 'https://github.com/makucg',
     linkedin: 'https://www.linkedin.com/in/diego-montes-novio-50503448/',

@@ -44,128 +44,38 @@ export const LinkedInIcon: React.FC<IconSvgProps> = ({
   );
 };
 
-export const HomeIcon: React.FC<IconSvgProps> = ({
-  size = 24,
+export const Logo: React.FC<IconSvgProps> = ({
+  size = 36,
   width,
   height,
   ...props
-}) => {
-  return (
-    <svg
-      height={size || height}
-      viewBox="0 0 24 24"
-      width={size || width}
-      {...props}
+}) => (
+  <svg
+    fill="none"
+    height={size || height}
+    viewBox="0 0 32 32"
+    width={size || width}
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <defs>
+      <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#1A1A1A" />
+        <stop offset="100%" stop-color="#0A0A0A" />
+      </linearGradient>
+    </defs>
+    <rect width="32" height="32" fill="url(#gradient)" rx="6" />
+    <text
+      x="50%"
+      y="50%"
+      text-anchor="middle"
+      dominant-baseline="middle"
+      fill="white"
+      font-size="16"
+      font-family="'Fira Code', monospace"
+      font-weight="bold"
     >
-      <path
-        d="M12 2.1l9.9 9.9-1.4 1.4L18 10.8V20H6v-9.2l-2.5 2.6-1.4-1.4L12 2.1zm1 8.2V18h4v-6h2l-7-7-7 7h2v6h4v-7.7l1 1.1z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-};
-
-export const ProfileIcon: React.FC<IconSvgProps> = ({
-  size = 24,
-  width,
-  height,
-  ...props
-}) => {
-  return (
-    <svg
-      height={size || height}
-      viewBox="0 0 24 24"
-      width={size || width}
-      {...props}
-    >
-      <path
-        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 3a3 3 0 110 6 3 3 0 010-6zm0 14c-2.5 0-4.7-1.2-6-3.1.1-2 4-3.1 6-3.1s5.9 1.1 6 3.1c-1.3 1.9-3.5 3.1-6 3.1z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-};
-
-export const ExperienceIcon: React.FC<IconSvgProps> = ({
-  size = 24,
-  width,
-  height,
-  ...props
-}) => {
-  return (
-    <svg
-      height={size || height}
-      viewBox="0 0 24 24"
-      width={size || width}
-      {...props}
-    >
-      <path
-        d="M2 6h6l2-2h4l2 2h6v14H2V6zm6 3h8v2H8V9zm0 4h8v2H8v-2z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-};
-
-export const StudiesIcon: React.FC<IconSvgProps> = ({
-  size = 24,
-  width,
-  height,
-  ...props
-}) => {
-  return (
-    <svg
-      height={size || height}
-      viewBox="0 0 24 24"
-      width={size || width}
-      {...props}
-    >
-      <path
-        d="M12 2l9 4-9 4-9-4 9-4zm0 7.7l6.5-2.9 1.5 3.3-8 4.9-8-4.9 1.5-3.3L12 9.7zM3 17h18v2H3v-2zm5-3h8v1H8v-1z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-};
-
-export const SkillsIcon: React.FC<IconSvgProps> = ({
-  size = 24,
-  width,
-  height,
-  ...props
-}) => {
-  return (
-    <svg
-      height={size || height}
-      viewBox="0 0 24 24"
-      width={size || width}
-      {...props}
-    >
-      <path
-        d="M12 2l2.1 6.3H20l-5.1 3.8L16 18l-4-2.9L8 18l1.1-5.9L4 8.3h5.9L12 2z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-};
-
-export const ProjectsIcon: React.FC<IconSvgProps> = ({
-  size = 24,
-  width,
-  height,
-  ...props
-}) => {
-  return (
-    <svg
-      height={size || height}
-      viewBox="0 0 24 24"
-      width={size || width}
-      {...props}
-    >
-      <path
-        d="M12 2L3 6v12l9 4 9-4V6l-9-4zm0 2.2l6.7 3.1v7.4l-6.7 3.1-6.7-3.1V7.3L12 4.2zm-3 5h6v6H9V9z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-};
+      DMN
+    </text>
+  </svg>
+);

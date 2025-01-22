@@ -1,6 +1,7 @@
 'use client';
 
 import { useAmplitude } from '@/hooks/useAmplitude';
+import { Button } from '@headlessui/react';
 import React from 'react';
 
 type TrackedButtonProps = {
@@ -30,9 +31,9 @@ const TrackedButton: React.FC<TrackedButtonProps> = ({
   };
 
   return (
-    <button type="button" {...buttonProps} onClick={handleClick}>
+    <Button type="button" {...buttonProps} onClick={handleClick}>
       {children}
-    </button>
+    </Button>
   );
 };
 

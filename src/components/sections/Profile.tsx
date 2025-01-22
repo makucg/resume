@@ -1,15 +1,23 @@
 'use client';
 
 import { siteConfig } from '@/config/site';
+import { Button, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
+import {
+  ChevronDownIcon,
+} from '@heroicons/react/16/solid';
 import Image from 'next/image';
 import Link from 'next/link';
+import TrackedButton from '../TrackedButton';
 
 const ProfileCard: React.FC = () => {
   return (
     <section id="Profile" className="grid min-h-screen place-items-center">
       <div className="mx-auto flex h-auto max-w-4xl flex-wrap items-center">
 
-        <div id="profile" className="mx-6 w-full rounded-lg bg-white opacity-75 shadow-2xl lg:mx-0 lg:w-3/5 lg:rounded-l-lg lg:rounded-r-none">
+        <div
+          id="profile"
+          className="mx-2 w-full rounded-lg bg-white opacity-75 shadow-2xl sm:mx-6 lg:mx-0 lg:w-3/5 lg:rounded-l-lg lg:rounded-r-none"
+        >
 
           <div className="p-4 text-center md:p-12 lg:text-left">
 
@@ -26,15 +34,56 @@ const ProfileCard: React.FC = () => {
               Santiago de Compostela
             </p>
             <p className="pt-8 text-sm">Java backend developer trying to understand the world...</p>
-            <p className="pt-2 text-sm">I am a software developer with over 10 years of experience in the IT sector, primarily focused on backend development with some frontend exposure. Passionate about technology, I thrive in collaborative environments, enjoy learning, and embrace new challenges to continuously improve my skills and knowledge.</p>
-
-            <div className="pb-8 pt-12">
-              <button className="rounded-full bg-green-700 px-4 py-2 font-bold text-white hover:bg-green-900" type="button">
-                Get In Touch
-              </button>
+            <p className="pt-2 text-sm">I am a software developer with over 10 years of experience in the IT sector, mainly focused on backend development with some experience in frontend. I am passionate about technology, enjoy working in collaborative environments, learning new things, and taking on challenges to keep improving my skills and knowledge.</p>
+            {/* List languagues in 2 columns  */}
+            <div className="flex flex-col items-start gap-2 pt-4 text-sm">
+              <span className="before:mr-2 before:content-['•']">Spanish (native)</span>
+              <span className="before:mr-2 before:content-['•']">Galician (native)</span>
+              <span className="before:mr-2 before:content-['•']">English (intermediate)</span>
+              <span className="before:mr-2 before:content-['•']">French (intermediate)</span>
             </div>
 
-            <div className="mx-auto mt-6 flex w-4/5 flex-wrap items-center justify-start space-x-2 pb-16 lg:w-full lg:pb-0">
+            <div className="flex justify-center pb-8 pt-12">
+              <Button className="rounded bg-green-700 px-4 py-2 font-bold text-white data-[hover]:bg-green-900" type="button">
+                Get In Touch
+              </Button>
+              <Menu>
+                <MenuButton className="ml-4 inline-flex items-center gap-2 rounded-md bg-blue-700 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-blue-900 data-[open]:bg-blue-800 data-[focus]:outline-1 data-[focus]:outline-white">
+                  Download CV
+                  <ChevronDownIcon className="size-4 fill-white/60" />
+                </MenuButton>
+
+                <MenuItems
+                  transition
+                  anchor="bottom end"
+                  className="origin-top-right rounded border border-white/5 bg-gray-600 p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[open]:scale-100 data-[closed]:opacity-0 data-[open]:opacity-90"
+                >
+                  <MenuItem>
+                    <TrackedButton
+                      eventName="download_cv_en"
+                      type="button"
+                      className="group flex w-full items-center gap-2 rounded px-3 py-1.5 data-[focus]:bg-white/10"
+                      onClick={() => window.open('/assets/docs/Diego_Montes_Novio_CV.pdf', '_blank')}
+                    >
+                      English (EN)
+                    </TrackedButton>
+                  </MenuItem>
+                  <div className="my-1 h-px bg-white/5" />
+                  <MenuItem>
+                    <TrackedButton
+                      eventName="download_cv_es"
+                      type="button"
+                      className="group flex w-full items-center gap-2 rounded px-3 py-1.5 data-[focus]:bg-white/10"
+                      onClick={() => window.open('/assets/docs/Diego_Montes_Novio_CV_ES.pdf', '_blank')}
+                    >
+                      Spanish (ES)
+                    </TrackedButton>
+                  </MenuItem>
+                </MenuItems>
+              </Menu>
+            </div>
+
+            <div className="mx-auto mt-6 flex w-4/5 flex-wrap items-center justify-center space-x-2 pb-16 lg:w-full lg:pb-0">
               <a href={`${siteConfig.links.github}`} data-tippy-content="@github_handle" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <svg className="h-6 fill-current text-gray-600 hover:text-green-700" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <title>GitHub</title>

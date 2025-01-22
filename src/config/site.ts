@@ -1,3 +1,4 @@
+import { JavaIcon, NextjsIcon, PythonIcon, SpringBootIcon, TailwindIcon, TypeScriptIcon } from '@/components/icons/icons';
 import ExperienceSection from '@/components/sections/Experience';
 import HomeSection from '@/components/sections/Home';
 import ProfileCard from '@/components/sections/Profile';
@@ -130,36 +131,54 @@ export const siteConfig = {
   projects: [
     {
       title: 'GasoAhorro',
-      description: 'Web application to calculate the savings of using a fuel card.',
-      technologies: ['Next.js', 'Tailwind CSS', 'TypeScript'],
+      description: 'A dynamic web application designed to help users calculate and visualize their fuel cost savings when using a fuel card. Built with Next.js for a seamless user experience, Tailwind CSS for responsive and modern design, and TypeScript to ensure a robust and maintainable codebase. Hosted on Vercel for optimal performance and scalability.',
+      technologies: [
+        { name: 'Next.js', icon: NextjsIcon },
+        { name: 'Tailwind CSS', icon: TailwindIcon },
+        { name: 'TypeScript', icon: TypeScriptIcon },
+      ],
       url: 'https://gasoahorro-v4.vercel.app/',
       status: 'In progress',
-      image: '/assets/img/projects/gasoahorro-v4.png',
     },
     {
       title: 'Resume',
-      description: 'My personal resume.',
-      technologies: ['Next.js', 'Tailwind CSS', 'TypeScript'],
+      description: 'A sleek and interactive personal resume showcasing my skills, projects, and experience. Developed using Next.js for efficient server-side rendering, styled with Tailwind CSS for a clean and professional look, and powered by TypeScript for reliability and scalability. Deployed on Vercel to ensure fast and consistent performance.',
+      technologies: [
+        { name: 'Next.js', icon: NextjsIcon },
+        { name: 'Tailwind CSS', icon: TailwindIcon },
+        { name: 'TypeScript', icon: TypeScriptIcon },
+      ],
       url: 'https://dmndev-resume.vercel.app/',
       status: 'In progress',
-      image: '/assets/img/projects/resume.png',
     },
     {
       title: 'Block Watch Screen',
       description: 'App to block the screen of the apple watch.',
-      technologies: ['Swift', 'WatchOS'],
+      // technologies: ['Swift', 'WatchOS'],
       status: 'Not started yet',
     },
     {
       title: 'Microservices',
-      description: 'Spring boot microservice infrastructure.',
-      technologies: ['Java', 'Spring Boot'],
+      description: 'Developing a modern, secure, and scalable microservices infrastructure using Spring Boot. The system integrates Spring Security for authentication and authorization, Netflix OSS for service discovery and resilience, and Kubernetes with Docker for container orchestration. Kafka powers event-driven communication, Resilience4j ensures fault tolerance, and MariaDB is used as the primary database. Deployed with AWS, this architecture is designed for high availability, scalability, and reliability, following best practices in distributed systems.',
+      technologies: [
+        { name: 'Java', icon: JavaIcon },
+        { name: 'Spring Boot', icon: SpringBootIcon },
+        { name: 'Spring Security', icon: null },
+        { name: 'Spring Cloud', icon: null },
+        { name: 'Netflix OSS', icon: null },
+        { name: 'Kubernetes', icon: null },
+        { name: 'Docker', icon: null },
+        { name: 'Kafka', icon: null },
+        { name: 'Resilience4j', icon: null },
+        { name: 'MariaDB', icon: null },
+        { name: 'AWS', icon: null },
+      ],
       status: 'In progress, not deployed yet',
     },
     {
       title: 'Expense Analyzer',
-      description: 'Python application to analyze expenses in English.',
-      technologies: ['Python'],
+      description: 'Python application to analyze expenses.',
+      technologies: [{ name: 'Python', icon: PythonIcon }],
       status: 'Not started yet',
     },
   ],

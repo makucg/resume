@@ -66,6 +66,9 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning lang="en">
+      <head>
+        <script async data-id="101476116" src="//static.getclicky.com/js"></script>
+      </head>
       <body
         className={`${fontMono.className} ${fontSans.variable} ${robotoMono.variable} scroll-smooth antialiased`}
       >

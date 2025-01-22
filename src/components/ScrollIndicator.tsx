@@ -1,4 +1,5 @@
 import { siteConfig } from '@/config/site';
+import TrackedButton from './TrackedButton';
 
 const ScrollIndicator: React.FC<{
   activeSection: string | null;
@@ -10,8 +11,9 @@ const ScrollIndicator: React.FC<{
         const { icon: Icon, title } = siteConfig.sections[sectionKey as keyof typeof siteConfig.sections];
 
         return (
-          <button
-            type="button"
+          <TrackedButton
+            eventName={sectionKey}
+            eventProperties={{ sectionKey }}
             key={sectionKey}
             title={title}
             onClick={() => onNavigate(sectionKey)}
@@ -20,7 +22,7 @@ const ScrollIndicator: React.FC<{
             }`}
           >
             <Icon size={24} />
-          </button>
+          </TrackedButton>
         );
       })}
     </div>

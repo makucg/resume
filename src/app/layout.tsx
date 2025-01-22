@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { fontMono, fontSans, robotoMono } from '@/config/fonts';
 import { siteConfig } from '@/config/site';
+import AmplitudeContextProvider from '@/context/AmplitudeContextProvider';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -66,14 +67,13 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning lang="en">
-      <head>
-        <script async data-id="101476116" src="//static.getclicky.com/js"></script>
-      </head>
-      <body
-        className={`${fontMono.className} ${fontSans.variable} ${robotoMono.variable} scroll-smooth antialiased`}
-      >
-        {children}
-      </body>
+      <AmplitudeContextProvider>
+        <body
+          className={`${fontMono.className} ${fontSans.variable} ${robotoMono.variable} scroll-smooth antialiased`}
+        >
+          {children}
+        </body>
+      </AmplitudeContextProvider>
     </html>
   );
 }

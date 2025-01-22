@@ -1,4 +1,5 @@
 import { siteConfig } from '@/config/site';
+import TrackedButton from './TrackedButton';
 
 const Navbar: React.FC<{
   activeSection: string | null;
@@ -11,8 +12,9 @@ const Navbar: React.FC<{
           = siteConfig.sections[sectionKey as keyof typeof siteConfig.sections];
 
         return (
-          <button
-            type="button"
+          <TrackedButton
+            eventName={sectionKey}
+            eventProperties={{ sectionKey }}
             key={sectionKey}
             title={title}
             onClick={() => onNavigate(sectionKey)}
@@ -21,7 +23,7 @@ const Navbar: React.FC<{
             }`}
           >
             <Icon size={24} />
-          </button>
+          </TrackedButton>
         );
       })}
     </nav>

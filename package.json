@@ -18,7 +18,6 @@
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
     "@hookform/resolvers": "^3.10.0",
-    "@iconify/react": "^5.2.0",
     "@react-aria/ssr": "3.9.7",
     "@react-aria/visually-hidden": "3.8.19",
     "@tailwindcss/forms": "^0.5.10",

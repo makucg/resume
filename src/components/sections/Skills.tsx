@@ -1,3 +1,5 @@
+import { CSSIcon, HTML5Icon, JavaIcon, JavaScriptIcon, PythonIcon, SpringBootIcon, TailwindIcon, TypeScriptIcon } from '@/components/icons/icons';
+
 const SkillsSection: React.FC = () => {
   return (
     <section id="Skills" className="grid min-h-screen grid-rows-[auto_1fr_auto]">
@@ -5,7 +7,10 @@ const SkillsSection: React.FC = () => {
         <h1 className="text-center text-4xl font-bold">Skills</h1>
         <div className="flex flex-col gap-2">
           <div className="flex w-full justify-between font-semibold">
-            <span>Java</span>
+            <div className="flex items-center gap-2">
+              <JavaIcon size={24} />
+              <span>Java</span>
+            </div>
             <span>95%</span>
           </div>
           <div className="w-full rounded-full bg-gray-300">
@@ -15,7 +20,10 @@ const SkillsSection: React.FC = () => {
 
         <div className="flex flex-col gap-2">
           <div className="flex w-full justify-between font-semibold">
-            <span>Spring Boot</span>
+            <div className="flex items-center gap-2">
+              <SpringBootIcon size={24} />
+              <span>Spring Boot</span>
+            </div>
             <span>80%</span>
           </div>
           <div className="w-full rounded-full bg-gray-300">
@@ -25,7 +33,10 @@ const SkillsSection: React.FC = () => {
 
         <div className="flex flex-col gap-2">
           <div className="flex w-full justify-between font-semibold">
-            <span>JavaScript</span>
+            <div className="flex items-center gap-2">
+              <JavaScriptIcon size={24} />
+              <span>JavaScript</span>
+            </div>
             <span>60%</span>
           </div>
           <div className="w-full rounded-full bg-gray-300">
@@ -35,7 +46,10 @@ const SkillsSection: React.FC = () => {
 
         <div className="flex flex-col gap-2">
           <div className="flex w-full justify-between font-semibold">
-            <span>TypeScript</span>
+            <div className="flex items-center gap-2">
+              <TypeScriptIcon size={24} />
+              <span>TypeScript</span>
+            </div>
             <span>50%</span>
           </div>
           <div className="w-full rounded-full bg-gray-300">
@@ -45,7 +59,20 @@ const SkillsSection: React.FC = () => {
 
         <div className="flex flex-col gap-2">
           <div className="flex w-full justify-between font-semibold">
-            <span>HTML/CSS/Tailwind</span>
+            <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
+                <HTML5Icon size={24} />
+                <span>HTML</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <CSSIcon size={24} />
+                <span>CSS</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <TailwindIcon size={24} />
+                <span>Tailwind</span>
+              </div>
+            </div>
             <span>40%</span>
           </div>
           <div className="w-full rounded-full bg-gray-300">
@@ -55,7 +82,10 @@ const SkillsSection: React.FC = () => {
 
         <div className="flex flex-col gap-2">
           <div className="flex w-full justify-between font-semibold">
-            <span>Python</span>
+            <div className="flex items-center gap-2">
+              <PythonIcon size={24} />
+              <span>Python</span>
+            </div>
             <span>20%</span>
           </div>
           <div className="w-full rounded-full bg-gray-300">

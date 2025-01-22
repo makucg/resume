@@ -12,12 +12,19 @@ import TrackedButton from '../TrackedButton';
 const ProfileCard: React.FC = () => {
   return (
     <section id="Profile" className="grid min-h-screen place-items-center">
-      <div className="mx-auto flex h-auto max-w-4xl flex-wrap items-center">
+      <div className="relative mx-auto flex h-auto max-w-4xl flex-wrap items-center">
 
-        <div
-          id="profile"
-          className="mx-2 w-full rounded-lg bg-white opacity-75 shadow-2xl sm:mx-6 lg:mx-0 lg:w-3/5 lg:rounded-l-lg lg:rounded-r-none"
-        >
+        <div className="relative z-20 mx-2 w-full sm:mx-6 lg:hidden">
+          <Image
+            src="/assets/img/profile.jpeg"
+            className="mx-auto size-3/5 translate-y-2 rounded shadow-2xl md:translate-y-4 lg:hidden"
+            alt="Profile"
+            width={500}
+            height={500}
+          />
+        </div>
+
+        <div className="z-10 mx-2 w-full rounded-lg bg-white opacity-75 shadow-2xl sm:mx-6 lg:mx-0 lg:w-3/5">
 
           <div className="p-4 text-center md:p-12 lg:text-left">
 
@@ -102,8 +109,8 @@ const ProfileCard: React.FC = () => {
 
         </div>
 
-        <div className="w-full lg:w-2/5">
-          <Image src="/assets/img/profile.jpeg" className="hidden rounded-none shadow-2xl lg:block lg:rounded-lg" alt="Profile" width={500} height={500} />
+        <div className="relative z-20 w-full lg:w-2/5">
+          <Image src="/assets/img/profile.jpeg" className="hidden -translate-x-2 rounded-none shadow-2xl lg:block lg:rounded xl:scale-125" alt="Profile" width={500} height={500} />
         </div>
       </div>
     </section>

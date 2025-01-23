@@ -7,9 +7,16 @@ import {
 } from '@heroicons/react/16/solid';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
+import EmailModal from '../EmailModal';
 import TrackedButton from '../TrackedButton';
 
 const ProfileCard: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <section id="Profile" className="grid min-h-screen place-items-center">
       <div className="relative mx-auto flex h-auto max-w-4xl flex-wrap items-center">
@@ -51,7 +58,11 @@ const ProfileCard: React.FC = () => {
             </div>
 
             <div className="flex justify-center pb-8 pt-12">
-              <Button className="rounded bg-green-700 px-4 py-2 font-bold text-white data-[hover]:bg-green-900" type="button">
+              <Button
+                className="rounded bg-green-700 px-4 py-2 font-bold text-white data-[hover]:bg-green-900"
+                type="button"
+                onClick={openModal}
+              >
                 Get In Touch
               </Button>
               <Menu>
@@ -113,6 +124,9 @@ const ProfileCard: React.FC = () => {
           <Image src="/assets/img/profile.jpeg" className="hidden -translate-x-2 rounded-none shadow-2xl lg:block lg:rounded xl:scale-125" alt="Profile" width={500} height={500} />
         </div>
       </div>
+
+      {/* Modal */}
+      <EmailModal isOpen={isModalOpen} closeModal={closeModal} />
     </section>
   );
 };

@@ -1,7 +1,7 @@
 'use client';
 
 import { siteConfig } from '@/config/site';
-import { Button, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import {
   ChevronDownIcon,
 } from '@heroicons/react/16/solid';
@@ -58,13 +58,14 @@ const ProfileCard: React.FC = () => {
             </div>
 
             <div className="flex justify-center pb-8 pt-12">
-              <Button
+              <TrackedButton
+                eventName="get_in_touch"
                 className="rounded bg-green-700 px-4 py-2 font-bold text-white data-[hover]:bg-green-900"
                 type="button"
                 onClick={openModal}
               >
                 Get In Touch
-              </Button>
+              </TrackedButton>
               <Menu>
                 <MenuButton className="ml-4 inline-flex items-center gap-2 rounded-md bg-blue-700 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-blue-900 data-[open]:bg-blue-800 data-[focus]:outline-1 data-[focus]:outline-white">
                   Download CV
@@ -74,7 +75,7 @@ const ProfileCard: React.FC = () => {
                 <MenuItems
                   transition
                   anchor="bottom end"
-                  className="origin-top-right rounded border border-white/5 bg-gray-600 p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[open]:scale-100 data-[closed]:opacity-0 data-[open]:opacity-90"
+                  className="z-30 origin-top-right rounded border border-white/5 bg-gray-600 p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[open]:scale-100 data-[closed]:opacity-0 data-[open]:opacity-90"
                 >
                   <MenuItem>
                     <TrackedButton
